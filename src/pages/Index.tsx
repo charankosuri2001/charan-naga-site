@@ -245,16 +245,52 @@ const Index = () => {
               <h3 className="text-xl font-semibold">Summary</h3>
               <p className="text-muted-foreground">Software Engineer with 1–2 years of experience. Passionate about scalable web applications, clean code, and continuous learning.</p>
             </section>
-            <section>
-              <h3 className="text-xl font-semibold">Education</h3>
+            <section aria-labelledby="education-heading">
+              <h3 id="education-heading" className="text-xl font-semibold">Education</h3>
               <ul className="mt-2 list-disc ps-6 text-muted-foreground">
                 <li>M.S., Texas A&M University, Kingsville — Aug 2024</li>
                 <li>B.Tech, Andhra Loyola Institute of Engineering and Technology, India</li>
               </ul>
             </section>
-            <section>
-              <h3 className="text-xl font-semibold">Skills</h3>
+            <section aria-labelledby="skills-heading">
+              <h3 id="skills-heading" className="text-xl font-semibold">Skills</h3>
               <p className="text-muted-foreground">JavaScript, TypeScript, React, Node.js, Express, PostgreSQL, Docker, AWS</p>
+            </section>
+            <section aria-labelledby="experience-heading">
+              <h3 id="experience-heading" className="text-xl font-semibold">Experience</h3>
+              <div className="mt-2 space-y-6">
+                <article aria-labelledby="role-webdev-title">
+                  <h4 id="role-webdev-title" className="text-lg font-semibold">Web Developer — Texas A&M University, Kingsville</h4>
+                  <ul className="mt-2 list-disc ps-6 text-muted-foreground">
+                    <li>Designed and implemented the official college website.</li>
+                    <li>Enhanced website performance and integrated multimedia elements such as images, videos, and interactive features.</li>
+                    <li>Executed testing and debugging processes to ensure stability.</li>
+                    <li>Reduced downtime by 25% through performance optimization.</li>
+                    <li>Applied responsive design principles for both mobile and laptop views, improving accessibility and user satisfaction by 30%.</li>
+                  </ul>
+                </article>
+                <article aria-labelledby="role-ga-title">
+                  <h4 id="role-ga-title" className="text-lg font-semibold">Graduate Assistant — Texas A&M University, Kingsville</h4>
+                  <ul className="mt-2 list-disc ps-6 text-muted-foreground">
+                    <li>Taught algorithms and data structures to undergraduate students.</li>
+                    <li>Assisted students with assignments and guided them in problem-solving.</li>
+                    <li>Helped the professor by grading and reviewing assignments.</li>
+                  </ul>
+                </article>
+              </div>
+            </section>
+            <section aria-labelledby="certifications-heading">
+              <h3 id="certifications-heading" className="text-xl font-semibold">Certifications</h3>
+              <ul className="mt-3 grid gap-2 sm:grid-cols-2 text-muted-foreground">
+                <li className="flex items-center gap-2">
+                  <span className="inline-block h-2 w-2 rounded-full bg-[hsl(var(--neon))] shadow-[0_0_12px_hsl(var(--neon))]" aria-hidden="true"></span>
+                  <span>[Add Certification Name] — [Issuer] ([Year])</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="inline-block h-2 w-2 rounded-full bg-[hsl(var(--neon))] shadow-[0_0_12px_hsl(var(--neon))]" aria-hidden="true"></span>
+                  <span>[Add Certification Name] — [Issuer] ([Year])</span>
+                </li>
+              </ul>
             </section>
           </article>
         </section>
