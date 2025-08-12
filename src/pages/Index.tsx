@@ -185,22 +185,63 @@ const Index = () => {
           <h2 className="text-3xl font-bold">Skills</h2>
           <p className="mt-2 text-muted-foreground">A snapshot of my current toolkit.</p>
           <div className="mt-6 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {[
-              { title: "Languages", items: ["JavaScript", "TypeScript", "Python", "Java"] },
-              { title: "Frameworks", items: ["React", "Node.js", "Express", "Tailwind CSS"] },
-              { title: "Tools", items: ["Git", "Docker", "Vite", "Jest"] },
-              { title: "Databases", items: ["PostgreSQL", "MongoDB", "SQLite"] },
-              { title: "Cloud", items: ["AWS", "Vercel", "Netlify"] },
-            ].map((group) => (
-              <div key={group.title} className="animate-fade-in">
-                <h3 className="text-xl font-semibold">{group.title}</h3>
-                <div className="mt-3 flex flex-wrap gap-2">
-                  {group.items.map((i) => (
-                    <Badge key={i} variant="secondary" className="hover-scale">{i}</Badge>
-                  ))}
+            {(() => {
+              const groups = [
+                { title: "Programming Languages", items: ["Java", "Python", "C", "JavaScript"] },
+                { title: "Databases", items: ["MySQL", "MongoDB"] },
+                { title: "Web Technologies", items: ["Node.js", "React", "HTML", "CSS", "REST"] },
+                { title: "Tools", items: ["Git", "AWS", "Apache", "Linux", "Android Studio"] },
+                { title: "Frameworks", items: ["Spring Boot", "Django"] },
+                { title: "Networking", items: ["TCP/IP", "DNS", "DHCP", "Network Troubleshooting"] },
+                { title: "Protocols", items: ["HTTP", "FTP", "SMTP"] },
+                { title: "Cloud", items: ["AWS"] },
+              ];
+
+              const iconMap: Record<string, string> = {
+                Java: "☕",
+                Python: "🐍",
+                C: "🧩",
+                JavaScript: "⚡",
+                MySQL: "🐬",
+                MongoDB: "🍃",
+                "Node.js": "🟢",
+                React: "⚛️",
+                HTML: "🌐",
+                CSS: "🎨",
+                REST: "🔗",
+                Git: "🌿",
+                AWS: "☁️",
+                Apache: "🪶",
+                Linux: "🐧",
+                "Android Studio": "🤖",
+                "Spring Boot": "🌱",
+                Django: "🐍",
+                "TCP/IP": "🔌",
+                DNS: "🧭",
+                DHCP: "📡",
+                "Network Troubleshooting": "🛠️",
+                HTTP: "🌐",
+                FTP: "📁",
+                SMTP: "✉️",
+              };
+
+              return groups.map((group) => (
+                <div key={group.title} className="animate-fade-in">
+                  <h3 className="text-xl font-semibold">{group.title}</h3>
+                  <div className="mt-3 flex flex-wrap gap-2">
+                    {group.items.map((i) => {
+                      const icon = iconMap[i] ?? "•";
+                      return (
+                        <Badge key={i} variant="secondary" className="hover-scale">
+                          <span aria-hidden="true" className="me-1">{icon}</span>
+                          <span>{i}</span>
+                        </Badge>
+                      );
+                    })}
+                  </div>
                 </div>
-              </div>
-            ))}
+              ));
+            })()}
           </div>
         </section>
 
