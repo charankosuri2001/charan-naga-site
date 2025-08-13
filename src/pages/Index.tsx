@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import { Sun, Moon } from "lucide-react";
+import { Helmet } from "react-helmet-async";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardHeader, CardTitle, CardContent, CardFooter } from "@/components/ui/card";
@@ -12,6 +14,22 @@ const Index = () => {
   const [active, setActive] = useState("home");
   const [errors, setErrors] = useState<Errors>({});
   const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
+  const [isDark, setIsDark] = useState<boolean>(() => document.documentElement.classList.contains("dark"));
+
+  // Initialize theme from localStorage
+  useEffect(() => {
+    const saved = localStorage.getItem("theme");
+    const shouldDark = saved ? saved === "dark" : false;
+    document.documentElement.classList.toggle("dark", shouldDark);
+    setIsDark(shouldDark);
+  }, []);
+
+  const toggleTheme = () => {
+    const next = !isDark;
+    document.documentElement.classList.toggle("dark", next);
+    setIsDark(next);
+    localStorage.setItem("theme", next ? "dark" : "light");
+  };
 
   const sections = ["home", "about", "skills", "projects", "resume", "contact"] as const;
 
@@ -68,6 +86,11 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <Helmet>
+        <title>Charan Kosuri — Software Engineer</title>
+        <meta name="description" content="Portfolio of Charan Naga Sai Kosuri: projects, skills, resume, and contact." />
+        <link rel="canonical" href="/" />
+      </Helmet>
       {/* Header */}
       <header className="sticky top-0 z-50 w-full border-b border-border bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-card focus:px-3 focus:py-2 focus:text-foreground">Skip to content</a>
@@ -89,6 +112,15 @@ const Index = () => {
               </a>
             ))}
           </nav>
+
+          <button
+            onClick={toggleTheme}
+            className="mr-2 inline-flex items-center justify-center rounded-md p-2 text-muted-foreground hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+            aria-label="Toggle theme"
+            title={isDark ? "Switch to light mode" : "Switch to dark mode"}
+          >
+            {isDark ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+          </button>
 
           <button
             className="md:hidden inline-flex items-center justify-center rounded-md p-2 text-muted-foreground hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
