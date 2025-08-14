@@ -97,7 +97,7 @@ const Index = () => {
         <div className="container mx-auto flex h-16 items-center justify-between px-4">
           <a href="#home" onClick={(e)=>onNavClick(e, "home")} className="flex items-center gap-2">
             <span className="inline-block h-2 w-2 rounded-full bg-[hsl(var(--neon))] shadow-[0_0_20px_hsl(var(--neon))]"></span>
-            <span className="text-base font-semibold tracking-wide">Charan N. S. Kosuri</span>
+            <span className="text-base font-semibold tracking-wide"></span>
           </a>
 
           <nav className="hidden md:flex items-center gap-1" aria-label="Main navigation">
