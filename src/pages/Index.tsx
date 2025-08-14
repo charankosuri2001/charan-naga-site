@@ -94,8 +94,8 @@ const Index = () => {
   return (
     <div className={`min-h-screen text-foreground dynamic-bg ${currentTheme > 1 ? `theme-${currentTheme}` : ''}`}>
       <Helmet>
-        <title>Portfolio — Software Engineer</title>
-        <meta name="description" content="Dynamic portfolio showcasing projects, skills, resume, and contact information." />
+        <title>Charan Naga Sai Kosuri — Software Engineer</title>
+        <meta name="description" content="Results-driven software engineer with a Master's in Computer Science and hands-on experience in full-stack development, cloud-native architecture, and AI integration." />
         <link rel="canonical" href="/" />
       </Helmet>
       
@@ -105,7 +105,7 @@ const Index = () => {
         <div className="container mx-auto flex h-16 items-center justify-between px-4">
           <a href="#home" onClick={(e)=>onNavClick(e, "home")} className="flex items-center gap-2">
             <span className="inline-block h-2 w-2 rounded-full bg-[hsl(var(--neon))] shadow-[0_0_20px_hsl(var(--neon))]"></span>
-            <span className="text-base font-semibold tracking-wide">Portfolio</span>
+            <span className="text-base font-semibold tracking-wide">Charan N. S. Kosuri</span>
           </a>
 
           <nav className="hidden md:flex items-center gap-1" aria-label="Main navigation">
@@ -189,10 +189,10 @@ const Index = () => {
               <div className="hero-content-overlay rounded-2xl p-8 md:p-12 shadow-2xl">
                 <p className="text-sm uppercase tracking-widest text-primary font-semibold">Software Engineer</p>
                 <h1 className="mt-4 text-5xl md:text-7xl font-extrabold leading-tight bg-gradient-to-r from-foreground via-primary to-accent bg-clip-text text-transparent">
-                  Welcome to My Portfolio
+                  Charan Naga Sai Kosuri
                 </h1>
                 <p className="mt-6 max-w-2xl text-xl md:text-2xl text-muted-foreground leading-relaxed">
-                  Turning complex problems into clean, scalable code with passion for innovation and excellence.
+                  Results-driven software engineer with expertise in full-stack development, cloud-native architecture, and AI integration.
                 </p>
 
                 <div className="mt-10 flex flex-wrap gap-4">
@@ -218,7 +218,7 @@ const Index = () => {
             <div className="container mx-auto px-8 py-14">
               <h2 className="text-3xl font-bold">About</h2>
               <p className="mt-4 max-w-3xl text-muted-foreground">
-                Software engineer with 1–2 years of experience. I focus on building scalable web applications with clean, maintainable code and a strong learning mindset.
+                Results-driven software engineer with a Master's in Computer Science and hands-on experience in full-stack development, cloud-native architecture, and AI integration. Skilled in React, Django, AWS, MySQL, and modern DevOps tools, with a proven ability to build secure, scalable applications.
               </p>
               <div className="mt-8">
                 <h3 className="text-xl font-semibold">Education</h3>
@@ -226,16 +226,24 @@ const Index = () => {
                   <li className="mb-8 ms-4">
                     <div className="absolute -start-1.5 mt-1 size-3 rounded-full bg-[hsl(var(--neon))] shadow-[0_0_16px_hsl(var(--neon))]"></div>
                     <time className="text-xs uppercase tracking-wide text-muted-foreground">Aug 2024</time>
-                    <h4 className="text-lg font-semibold">M.S., Texas A&M University, Kingsville</h4>
-                    <p className="text-muted-foreground">Master of Science, graduated August 2024.</p>
-                  </li>
-                  <li className="mb-2 ms-4">
-                    <div className="absolute -start-1.5 mt-1 size-3 rounded-full bg-[hsl(var(--neon))] shadow-[0_0_16px_hsl(var(--neon))]"></div>
-                    <time className="text-xs uppercase tracking-wide text-muted-foreground">B.Tech</time>
-                    <h4 className="text-lg font-semibold">Andhra Loyola Institute of Engineering and Technology, India</h4>
-                    <p className="text-muted-foreground">Bachelor of Technology.</p>
+                    <h4 className="text-lg font-semibold">Master's in Computer Science</h4>
+                    <p className="text-muted-foreground">Texas A&M University Kingsville | GPA: 3.7/4.0</p>
+                    <p className="text-sm text-muted-foreground mt-1">Coursework: Database Systems, Analysis of Algorithms, Data Mining, Cloud Computing, Artificial Intelligence, Operating Systems</p>
                   </li>
                 </ol>
+              </div>
+              <div className="mt-8">
+                <h3 className="text-xl font-semibold">Leadership</h3>
+                <ul className="mt-4 space-y-2 text-muted-foreground">
+                  <li className="flex items-center gap-2">
+                    <span className="inline-block h-2 w-2 rounded-full bg-[hsl(var(--neon))] shadow-[0_0_12px_hsl(var(--neon))]" aria-hidden="true"></span>
+                    <span>President - Association of Indian Students</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="inline-block h-2 w-2 rounded-full bg-[hsl(var(--neon))] shadow-[0_0_12px_hsl(var(--neon))]" aria-hidden="true"></span>
+                    <span>Chairman - Institution of Electronics and Telecommunication Engineers</span>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
@@ -255,9 +263,9 @@ const Index = () => {
                     { title: "Web Technologies", items: ["Node.js", "React", "HTML", "CSS", "REST"] },
                     { title: "Tools", items: ["Git", "AWS", "Apache", "Linux", "Android Studio"] },
                     { title: "Frameworks", items: ["Spring Boot", "Django"] },
-                    { title: "Networking", items: ["TCP/IP", "DNS", "DHCP", "Network Troubleshooting"] },
-                    { title: "Protocols", items: ["HTTP", "FTP", "SMTP"] },
-                    { title: "Cloud", items: ["AWS"] },
+                    { title: "Cloud Services", items: ["AWS S3", "IAM", "Lambda", "CloudFormation", "CloudWatch"] },
+                    { title: "Machine Learning", items: ["Supervised Learning", "Unsupervised Learning", "Algorithms"] },
+                    { title: "DevOps", items: ["Docker", "Kubernetes", "Jenkins", "CI/CD"] },
                   ];
 
                   const iconMap: Record<string, string> = {
@@ -273,19 +281,23 @@ const Index = () => {
                     CSS: "🎨",
                     REST: "🔗",
                     Git: "🌿",
-                    AWS: "☁️",
                     Apache: "🪶",
                     Linux: "🐧",
                     "Android Studio": "🤖",
                     "Spring Boot": "🌱",
                     Django: "🐍",
-                    "TCP/IP": "🔌",
-                    DNS: "🧭",
-                    DHCP: "📡",
-                    "Network Troubleshooting": "🛠️",
-                    HTTP: "🌐",
-                    FTP: "📁",
-                    SMTP: "✉️",
+                    "AWS S3": "☁️",
+                    IAM: "🔐",
+                    Lambda: "⚡",
+                    CloudFormation: "📋",
+                    CloudWatch: "👁️",
+                    "Supervised Learning": "🧠",
+                    "Unsupervised Learning": "🤖",
+                    Algorithms: "🔢",
+                    Docker: "🐳",
+                    Kubernetes: "⚙️",
+                    Jenkins: "🔧",
+                    "CI/CD": "🚀",
                   };
 
                   return groups.map((group) => (
@@ -315,11 +327,28 @@ const Index = () => {
           <div className="hero-content-overlay mx-4 my-14 rounded-2xl">
             <div className="container mx-auto px-8 py-14">
               <h2 className="text-3xl font-bold">Projects</h2>
-              <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              <div className="mt-8 grid gap-6 sm:grid-cols-1 lg:grid-cols-2">
                 {[
-                  { name: "TaskFlow", desc: "A lightweight task management web app focusing on speed and accessibility.", stack: ["React", "TypeScript", "Tailwind", "Vite"] },
-                  { name: "API Monitor", desc: "Dashboard to track API health and latency with realtime charts.", stack: ["Node.js", "Express", "PostgreSQL", "Recharts"] },
-                  { name: "DevBlog", desc: "A developer blog with MDX support, SEO, and dark mode.", stack: ["React", "MDX", "SEO"] },
+                  { 
+                    name: "AI-Powered Job Recommender Portal", 
+                    desc: "Full-stack job portal with AI-powered resume matching using TF-IDF and cosine similarity, improving job alignment accuracy by 80%.",
+                    stack: ["Spring Boot", "React.js", "PostgreSQL", "JWT", "AWS EC2", "GitHub Actions"]
+                  },
+                  { 
+                    name: "RAG Knowledge Assistant", 
+                    desc: "End-to-end Generative AI application using Retrieval-Augmented Generation to answer PDF-based queries with cited sources.",
+                    stack: ["Spring Boot", "React", "PostgreSQL", "LangChain", "OpenAI API", "AWS Bedrock", "Docker", "Kubernetes"]
+                  },
+                  { 
+                    name: "Credit Card Fraud Detection", 
+                    desc: "ML model to detect fraudulent transactions achieving over 92% recall on imbalanced real-world datasets using advanced preprocessing techniques.",
+                    stack: ["Python", "Scikit-learn", "XGBoost", "Pandas", "NumPy", "SMOTE"]
+                  },
+                  { 
+                    name: "CRUD Web Application", 
+                    desc: "Full-stack application with optimized database queries and RESTful APIs, improving data handling efficiency by 25%.",
+                    stack: ["React.js", "Node.js", "Express", "MongoDB", "PostgreSQL"]
+                  },
                 ].map((p) => (
                   <Card key={p.name} className="transition-transform hover:scale-[1.01]">
                     <CardHeader>
@@ -350,59 +379,44 @@ const Index = () => {
             <div className="container mx-auto px-8 py-14">
               <div className="flex flex-wrap items-center justify-between gap-4">
                 <h2 className="text-3xl font-bold">Resume</h2>
-                <Button asChild variant="neon"><a href="/assets/Charan-Kosuri-Resume.pdf" download>Download Resume (PDF)</a></Button>
+                <Button asChild variant="neon"><a href="#contact" onClick={(e)=>onNavClick(e, "contact")}>Contact Me</a></Button>
               </div>
               <article className="mt-8 space-y-6">
                 <section>
                   <h3 className="text-xl font-semibold">Summary</h3>
-                  <p className="text-muted-foreground">Software Engineer with 1–2 years of experience. Passionate about scalable web applications, clean code, and continuous learning.</p>
+                  <p className="text-muted-foreground">Results-driven software engineer with a Master's in Computer Science and hands-on experience in full-stack development, cloud-native architecture, and AI integration. Seeking a full-time role to apply expertise in cutting-edge technologies, solve complex problems, and deliver measurable business value.</p>
                 </section>
                 <section aria-labelledby="education-heading">
                   <h3 id="education-heading" className="text-xl font-semibold">Education</h3>
                   <ul className="mt-2 list-disc ps-6 text-muted-foreground">
-                    <li>M.S., Texas A&M University, Kingsville — Aug 2024</li>
-                    <li>B.Tech, Andhra Loyola Institute of Engineering and Technology, India</li>
+                    <li>Master's in Computer Science, Texas A&M University Kingsville — Aug 2024 (GPA: 3.7/4.0)</li>
                   </ul>
                 </section>
-                <section aria-labelledby="skills-heading">
-                  <h3 id="skills-heading" className="text-xl font-semibold">Skills</h3>
-                  <p className="text-muted-foreground">JavaScript, TypeScript, React, Node.js, Express, PostgreSQL, Docker, AWS</p>
-                </section>
                 <section aria-labelledby="experience-heading">
-                  <h3 id="experience-heading" className="text-xl font-semibold">Experience</h3>
+                  <h3 id="experience-heading" className="text-xl font-semibold">Professional Experience</h3>
                   <div className="mt-2 space-y-6">
-                    <article aria-labelledby="role-webdev-title">
-                      <h4 id="role-webdev-title" className="text-lg font-semibold">Web Developer — Texas A&M University, Kingsville</h4>
+                    <article aria-labelledby="role-swe-title">
+                      <h4 id="role-swe-title" className="text-lg font-semibold">Software Engineer — Elite Business Consulting</h4>
+                      <p className="text-sm text-muted-foreground mb-2">Sep 2024 – Present | Herndon, VA</p>
                       <ul className="mt-2 list-disc ps-6 text-muted-foreground">
-                        <li>Designed and implemented the official college website.</li>
-                        <li>Enhanced website performance and integrated multimedia elements such as images, videos, and interactive features.</li>
-                        <li>Executed testing and debugging processes to ensure stability.</li>
-                        <li>Reduced downtime by 25% through performance optimization.</li>
-                        <li>Applied responsive design principles for both mobile and laptop views, improving accessibility and user satisfaction by 30%.</li>
+                        <li>Implemented AWS IAM for secure access controls, managing roles and reducing unauthorized access</li>
+                        <li>Stored sensitive data securely with encryption techniques, ensuring safety for all user passwords</li>
+                        <li>Integrated OAuth2 with Spring Security, securing 100% of API endpoints and improving role-based access control</li>
+                        <li>Set up Jenkins CI/CD pipeline, automating build, testing, and deployment processes to increase efficiency</li>
+                        <li>Developed and deployed microservices with Spring Boot for user, product, and order management, enhancing scalability</li>
                       </ul>
                     </article>
-                    <article aria-labelledby="role-ga-title">
-                      <h4 id="role-ga-title" className="text-lg font-semibold">Graduate Assistant — Texas A&M University, Kingsville</h4>
+                    <article aria-labelledby="role-webdev-title">
+                      <h4 id="role-webdev-title" className="text-lg font-semibold">Web Developer — Graduate Assistant</h4>
+                      <p className="text-sm text-muted-foreground mb-2">Oct 2023 – Aug 2024 | Kingsville, TX</p>
                       <ul className="mt-2 list-disc ps-6 text-muted-foreground">
-                        <li>Taught algorithms and data structures to undergraduate students.</li>
-                        <li>Assisted students with assignments and guided them in problem-solving.</li>
-                        <li>Helped the professor by grading and reviewing assignments.</li>
+                        <li>Designed and implemented website architecture, improving scalability and reducing load time by 20%</li>
+                        <li>Integrated multimedia elements, increasing user engagement metrics by 15%</li>
+                        <li>Applied responsive web design principles, improving accessibility and user satisfaction by 30%</li>
+                        <li>Executed thorough testing and debugging, enhancing site reliability and reducing downtime by 25%</li>
                       </ul>
                     </article>
                   </div>
-                </section>
-                <section aria-labelledby="certifications-heading">
-                  <h3 id="certifications-heading" className="text-xl font-semibold">Certifications</h3>
-                  <ul className="mt-3 grid gap-2 sm:grid-cols-2 text-muted-foreground">
-                    <li className="flex items-center gap-2">
-                      <span className="inline-block h-2 w-2 rounded-full bg-[hsl(var(--neon))] shadow-[0_0_12px_hsl(var(--neon))]" aria-hidden="true"></span>
-                      <span>[Add Certification Name] — [Issuer] ([Year])</span>
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <span className="inline-block h-2 w-2 rounded-full bg-[hsl(var(--neon))] shadow-[0_0_12px_hsl(var(--neon))]" aria-hidden="true"></span>
-                      <span>[Add Certification Name] — [Issuer] ([Year])</span>
-                    </li>
-                  </ul>
                 </section>
               </article>
             </div>
@@ -442,11 +456,12 @@ const Index = () => {
                 </form>
 
                 <aside>
-                  <h3 className="text-xl font-semibold">Direct links</h3>
+                  <h3 className="text-xl font-semibold">Contact Information</h3>
                   <ul className="mt-3 space-y-2 text-muted-foreground">
-                    <li>LinkedIn: <a className="text-primary hover:underline" href="#">[PASTE LINKEDIN URL HERE]</a></li>
-                    <li>GitHub: <a className="text-primary hover:underline" href="#">[PASTE GITHUB URL HERE]</a></li>
-                    <li>Email: <a className="text-primary hover:underline" href="mailto:your.email@example.com">your.email@example.com</a></li>
+                    <li>📍 Location: <span className="text-foreground">Texas, TX</span></li>
+                    <li>📧 Email: <a className="text-primary hover:underline" href="mailto:kosuricharan2001@gmail.com">kosuricharan2001@gmail.com</a></li>
+                    <li>💼 LinkedIn: <a className="text-primary hover:underline" href="#" target="_blank" rel="noopener noreferrer">Connect with me</a></li>
+                    <li>⚡ Available for: <span className="text-foreground">Full-time opportunities</span></li>
                   </ul>
                 </aside>
               </div>
@@ -459,11 +474,11 @@ const Index = () => {
       <footer className="border-t border-white/20 hero-content-overlay">
         <div className="container mx-auto py-8 px-4">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <p className="text-sm text-muted-foreground">© {new Date().getFullYear()} Portfolio. All rights reserved.</p>
+            <p className="text-sm text-muted-foreground">© {new Date().getFullYear()} Charan Naga Sai Kosuri. All rights reserved.</p>
             <div className="flex items-center gap-4">
               <a href="#contact" onClick={(e)=>onNavClick(e, "contact")} className="text-muted-foreground hover:text-primary" aria-label="LinkedIn">LinkedIn</a>
               <a href="#contact" onClick={(e)=>onNavClick(e, "contact")} className="text-muted-foreground hover:text-primary" aria-label="GitHub">GitHub</a>
-              <a href="mailto:your.email@example.com" className="text-muted-foreground hover:text-primary" aria-label="Email">Email</a>
+              <a href="mailto:kosuricharan2001@gmail.com" className="text-muted-foreground hover:text-primary" aria-label="Email">Email</a>
             </div>
           </div>
         </div>
