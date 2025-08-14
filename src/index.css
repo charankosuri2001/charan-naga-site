@@ -8,6 +8,13 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
+    /* Dynamic backgrounds - vibrant themes */
+    --bg-theme-1: linear-gradient(135deg, 274 87% 15%, 274 77% 25%, 220 84% 40%);
+    --bg-theme-2: linear-gradient(135deg, 340 82% 52%, 25 95% 53%, 45 100% 70%);
+    --bg-theme-3: linear-gradient(135deg, 217 91% 60%, 166 100% 37%, 142 76% 36%);
+    --bg-theme-4: linear-gradient(135deg, 295 85% 25%, 320 65% 45%, 340 87% 65%);
+    --bg-overlay: rgba(255, 255, 255, 0.95);
+    
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
 
@@ -17,24 +24,24 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 222.2 47.4% 11.2%;
+    --primary: 274 87% 35%;
     --primary-foreground: 210 40% 98%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 274 20% 92%;
+    --secondary-foreground: 274 87% 15%;
 
-    --muted: 210 40% 96.1%;
+    --muted: 220 14% 96%;
     --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 190 90% 50%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 340 82% 52%;
+    --accent-foreground: 210 40% 98%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 190 90% 50%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 274 87% 35%;
 
     --radius: 0.5rem;
 
@@ -47,12 +54,21 @@ All colors MUST be HSL.
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
 
-    /* Neon system */
-    --neon: 190 90% 50%;
-    --neon-glow: 190 90% 60%;
+    /* Enhanced neon system */
+    --neon: 340 82% 52%;
+    --neon-glow: 340 82% 62%;
+    --neon-secondary: 274 87% 35%;
+    --neon-tertiary: 217 91% 60%;
   }
 
   .dark {
+    /* Dynamic backgrounds - dark themes */
+    --bg-theme-1: linear-gradient(135deg, 274 87% 15%, 274 50% 8%, 220 84% 12%);
+    --bg-theme-2: linear-gradient(135deg, 340 82% 25%, 25 95% 20%, 45 100% 30%);
+    --bg-theme-3: linear-gradient(135deg, 217 91% 25%, 166 100% 18%, 142 76% 16%);
+    --bg-theme-4: linear-gradient(135deg, 295 85% 15%, 320 65% 25%, 340 87% 35%);
+    --bg-overlay: rgba(0, 0, 0, 0.4);
+    
     --background: 222 16% 12%;
     --foreground: 210 40% 98%;
 
@@ -62,7 +78,7 @@ All colors MUST be HSL.
     --popover: 222 16% 9%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 190 90% 55%;
+    --primary: 340 82% 62%;
     --primary-foreground: 222.2 47.4% 11.2%;
 
     --secondary: 217.2 32.6% 17.5%;
@@ -71,7 +87,7 @@ All colors MUST be HSL.
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
 
-    --accent: 190 90% 50%;
+    --accent: 274 87% 55%;
     --accent-foreground: 210 40% 98%;
 
     --destructive: 0 62.8% 30.6%;
@@ -79,7 +95,7 @@ All colors MUST be HSL.
 
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
-    --ring: 190 90% 55%;
+    --ring: 340 82% 62%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -89,8 +105,10 @@ All colors MUST be HSL.
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
 
-    --neon: 190 90% 55%;
-    --neon-glow: 190 90% 65%;
+    --neon: 340 82% 62%;
+    --neon-glow: 340 82% 72%;
+    --neon-secondary: 274 87% 55%;
+    --neon-tertiary: 217 91% 70%;
   }
 }
 
@@ -101,4 +119,37 @@ All colors MUST be HSL.
     html { scroll-behavior: auto; }
   }
   body { @apply bg-background text-foreground antialiased; }
+}
+
+@layer utilities {
+  .dynamic-bg {
+    background: var(--bg-theme-1);
+    transition: background 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .dynamic-bg.theme-2 {
+    background: var(--bg-theme-2);
+  }
+  
+  .dynamic-bg.theme-3 {
+    background: var(--bg-theme-3);
+  }
+  
+  .dynamic-bg.theme-4 {
+    background: var(--bg-theme-4);
+  }
+  
+  .hero-content-overlay {
+    background: var(--bg-overlay);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .hover-scale {
+    transition: transform 0.2s ease;
+  }
+  
+  .hover-scale:hover {
+    transform: scale(1.05);
+  }
 }
