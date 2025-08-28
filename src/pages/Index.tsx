@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Sun, Moon } from "lucide-react";
 import { Helmet } from "react-helmet-async";
-import professionalPhoto from "@/assets/professional-photo.jpg";
+import professionalPhoto from "/lovable-uploads/68bd7391-e4b9-46f3-aef1-bd196e2447a2.png";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardHeader, CardTitle, CardContent, CardFooter } from "@/components/ui/card";
