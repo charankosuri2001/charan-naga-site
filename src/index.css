@@ -8,11 +8,11 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Dynamic backgrounds - vibrant themes */
-    --bg-theme-1: linear-gradient(135deg, 274 87% 15%, 274 77% 25%, 220 84% 40%);
-    --bg-theme-2: linear-gradient(135deg, 340 82% 52%, 25 95% 53%, 45 100% 70%);
-    --bg-theme-3: linear-gradient(135deg, 217 91% 60%, 166 100% 37%, 142 76% 36%);
-    --bg-theme-4: linear-gradient(135deg, 295 85% 25%, 320 65% 45%, 340 87% 65%);
+    /* Professional background gradients - elegant themes */
+    --bg-theme-1: linear-gradient(135deg, 216 12% 84%, 210 16% 93%, 220 13% 91%);
+    --bg-theme-2: linear-gradient(135deg, 215 28% 17%, 216 50% 12%, 218 11% 65%);
+    --bg-theme-3: linear-gradient(135deg, 220 9% 46%, 215 14% 34%, 217 19% 27%);
+    --bg-theme-4: linear-gradient(135deg, 215 25% 27%, 217 33% 17%, 221 39% 11%);
     --bg-overlay: rgba(255, 255, 255, 0.95);
     
     --background: 0 0% 100%;

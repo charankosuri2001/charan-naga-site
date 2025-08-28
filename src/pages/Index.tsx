@@ -173,11 +173,13 @@ const Index = () => {
           {/* Background photo integration */}
           <div className="absolute inset-0 -z-10">
             <div className="absolute inset-0 bg-gradient-to-br from-black/20 via-transparent to-black/30"></div>
-            <img 
-              src={professionalPhoto} 
-              alt="Professional headshot" 
-              className="absolute top-8 right-8 md:top-12 md:right-12 w-32 h-32 md:w-48 md:h-48 lg:w-64 lg:h-64 rounded-full object-cover border-4 border-white/30 shadow-2xl opacity-80 hover:opacity-100 transition-opacity duration-500"
-            />
+            <div className="absolute top-8 left-8 md:top-12 md:left-12">
+              <img 
+                src={professionalPhoto} 
+                alt="Charan Naga Sai Kosuri - Professional headshot" 
+                className="w-24 h-24 md:w-32 md:h-32 lg:w-40 lg:h-40 rounded-full object-cover border-3 border-primary/40 shadow-[0_0_30px_rgba(0,0,0,0.3)] hover:border-primary/60 transition-all duration-300"
+              />
+            </div>
             {/* Glowing orbs */}
             <div className="pointer-events-none absolute -top-16 left-1/3 h-96 w-96 -translate-x-1/2 rounded-full bg-[hsl(var(--neon))] opacity-10 blur-3xl animate-pulse" />
             <div className="pointer-events-none absolute bottom-20 right-1/4 h-64 w-64 rounded-full bg-[hsl(var(--neon-secondary))] opacity-8 blur-2xl animate-pulse" style={{animationDelay: '1s'}} />
