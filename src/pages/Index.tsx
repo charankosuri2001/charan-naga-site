@@ -33,7 +33,7 @@ const Index = () => {
     localStorage.setItem("theme", next ? "dark" : "light");
   };
 
-  const sections = ["home", "about", "skills", "projects", "resume", "contact"] as const;
+  const sections = ["home", "about", "skills", "projects", "contact"] as const;
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -170,16 +170,9 @@ const Index = () => {
       <main id="main">
         {/* Hero */}
         <section id="home" className="relative overflow-hidden min-h-screen flex items-center">
-          {/* Background photo integration */}
+          {/* Background effects */}
           <div className="absolute inset-0 -z-10">
             <div className="absolute inset-0 bg-gradient-to-br from-black/20 via-transparent to-black/30"></div>
-            <div className="absolute top-8 left-8 md:top-12 md:left-12">
-              <img 
-                src={professionalPhoto} 
-                alt="Charan Naga Sai Kosuri - Professional headshot" 
-                className="w-24 h-24 md:w-32 md:h-32 lg:w-40 lg:h-40 rounded-full object-cover border-3 border-primary/40 shadow-[0_0_30px_rgba(0,0,0,0.3)] hover:border-primary/60 transition-all duration-300"
-              />
-            </div>
             {/* Glowing orbs */}
             <div className="pointer-events-none absolute -top-16 left-1/3 h-96 w-96 -translate-x-1/2 rounded-full bg-[hsl(var(--neon))] opacity-10 blur-3xl animate-pulse" />
             <div className="pointer-events-none absolute bottom-20 right-1/4 h-64 w-64 rounded-full bg-[hsl(var(--neon-secondary))] opacity-8 blur-2xl animate-pulse" style={{animationDelay: '1s'}} />
@@ -193,6 +186,16 @@ const Index = () => {
                 <h1 className="mt-4 text-5xl md:text-7xl font-extrabold leading-tight bg-gradient-to-r from-foreground via-primary to-accent bg-clip-text text-transparent">
                   Charan Naga Sai Kosuri
                 </h1>
+                
+                {/* Photo positioned under the name */}
+                <div className="mt-6 flex justify-center md:justify-start">
+                  <img 
+                    src={professionalPhoto} 
+                    alt="Charan Naga Sai Kosuri - Professional headshot" 
+                    className="w-32 h-40 md:w-40 md:h-48 lg:w-48 lg:h-56 rounded-lg object-cover border-2 border-primary/40 shadow-[0_0_30px_rgba(0,0,0,0.3)] hover:border-primary/60 transition-all duration-300"
+                  />
+                </div>
+                
                 <p className="mt-6 max-w-2xl text-xl md:text-2xl text-muted-foreground leading-relaxed">
                   Results-driven software engineer with expertise in full-stack development, cloud-native architecture, and AI integration.
                 </p>
@@ -203,6 +206,9 @@ const Index = () => {
                   </Button>
                   <Button asChild variant="neon" size="lg" className="text-lg px-8 py-4 h-auto">
                     <a href="#contact" onClick={(e)=>onNavClick(e, "contact")}>Let's Connect</a>
+                  </Button>
+                  <Button asChild variant="secondary" size="lg" className="text-lg px-8 py-4 h-auto">
+                    <a href="/resume.pdf" download>Download Resume</a>
                   </Button>
                 </div>
                 
@@ -375,55 +381,6 @@ const Index = () => {
           </div>
         </section>
 
-        {/* Resume */}
-        <section id="resume" className="relative">
-          <div className="hero-content-overlay mx-4 my-14 rounded-2xl">
-            <div className="container mx-auto px-8 py-14">
-              <div className="flex flex-wrap items-center justify-between gap-4">
-                <h2 className="text-3xl font-bold">Resume</h2>
-                <Button asChild variant="neon"><a href="#contact" onClick={(e)=>onNavClick(e, "contact")}>Contact Me</a></Button>
-              </div>
-              <article className="mt-8 space-y-6">
-                <section>
-                  <h3 className="text-xl font-semibold">Summary</h3>
-                  <p className="text-muted-foreground">Results-driven software engineer with a Master's in Computer Science and hands-on experience in full-stack development, cloud-native architecture, and AI integration. Seeking a full-time role to apply expertise in cutting-edge technologies, solve complex problems, and deliver measurable business value.</p>
-                </section>
-                <section aria-labelledby="education-heading">
-                  <h3 id="education-heading" className="text-xl font-semibold">Education</h3>
-                  <ul className="mt-2 list-disc ps-6 text-muted-foreground">
-                    <li>Master's in Computer Science, Texas A&M University Kingsville — Aug 2024 (GPA: 3.7/4.0)</li>
-                  </ul>
-                </section>
-                <section aria-labelledby="experience-heading">
-                  <h3 id="experience-heading" className="text-xl font-semibold">Professional Experience</h3>
-                  <div className="mt-2 space-y-6">
-                    <article aria-labelledby="role-swe-title">
-                      <h4 id="role-swe-title" className="text-lg font-semibold">Software Engineer — Elite Business Consulting</h4>
-                      <p className="text-sm text-muted-foreground mb-2">Sep 2024 – Present | Herndon, VA</p>
-                      <ul className="mt-2 list-disc ps-6 text-muted-foreground">
-                        <li>Implemented AWS IAM for secure access controls, managing roles and reducing unauthorized access</li>
-                        <li>Stored sensitive data securely with encryption techniques, ensuring safety for all user passwords</li>
-                        <li>Integrated OAuth2 with Spring Security, securing 100% of API endpoints and improving role-based access control</li>
-                        <li>Set up Jenkins CI/CD pipeline, automating build, testing, and deployment processes to increase efficiency</li>
-                        <li>Developed and deployed microservices with Spring Boot for user, product, and order management, enhancing scalability</li>
-                      </ul>
-                    </article>
-                    <article aria-labelledby="role-webdev-title">
-                      <h4 id="role-webdev-title" className="text-lg font-semibold">Web Developer — Graduate Assistant</h4>
-                      <p className="text-sm text-muted-foreground mb-2">Oct 2023 – Aug 2024 | Kingsville, TX</p>
-                      <ul className="mt-2 list-disc ps-6 text-muted-foreground">
-                        <li>Designed and implemented website architecture, improving scalability and reducing load time by 20%</li>
-                        <li>Integrated multimedia elements, increasing user engagement metrics by 15%</li>
-                        <li>Applied responsive web design principles, improving accessibility and user satisfaction by 30%</li>
-                        <li>Executed thorough testing and debugging, enhancing site reliability and reducing downtime by 25%</li>
-                      </ul>
-                    </article>
-                  </div>
-                </section>
-              </article>
-            </div>
-          </div>
-        </section>
 
         {/* Contact */}
         <section id="contact" className="relative">
